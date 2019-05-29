@@ -19,7 +19,7 @@ export default class App extends Component {
         </header>
         <main>
           <HomePage />
-          <Route path='/' component={HomePage} />
+          <Route exact path='/' component={HomePage} />
           <Route path='/about' component={AboutPage} />
         </main>
         <footer>
