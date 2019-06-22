@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
-import { Route } from 'react-router-dom'
+import { Route, Switch } from 'react-router-dom'
 import Nav from './Nav'
 import Header from './Header'
 import Footer from './Footer'
 import HomePage from './HomePage'
 import AboutPage from './AboutPage'
+import WorkoutsPage from './WorkoutsPage'
+import NotFoundPage from './NotFoundPage'
 import './App.css'
 
 export default class App extends Component {
@@ -18,9 +20,12 @@ export default class App extends Component {
           <Header />
         </header>
         <main>
-          <HomePage />
-          <Route exact path='/' component={HomePage} />
-          <Route path='/about' component={AboutPage} />
+          <Switch>
+            <Route exact path='/' component={HomePage} />
+            <Route path='/about' component={AboutPage} />
+            <Route path='/workouts' component={WorkoutsPage} />
+            <Route component={NotFoundPage} />
+          </Switch>
         </main>
         <footer>
           <Footer />
